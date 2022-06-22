@@ -1,0 +1,6 @@
+[book]
+authors = ["learnforpractice"]
+language = "en"
+multilingual = false
+src = "src"
+title = "Rust Smart Contracts Development Kit"
