@@ -1,8 +1,6 @@
 # Setup Development Environment
 
-## Setup Development Environment
-
-### Install Rust
+## Install Rust
 
 ```
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
@@ -30,16 +28,22 @@ Open a new terminal, run the following command to switch rust to nightly
 rustup default nightly
 ```
 
-### Install rust-src
+## Install rust-src
 
 ```
 rustup component add rust-src --toolchain nightly-x86_64-apple-darwin
 ```
 
-### Install Rust Smart Contracts builder
+## Install Rust Smart Contracts Builder 
 
 ```
-cargo install --git=https://github.com/uuosio/cargo-eosiocontract --branch=eosio
+cargo install cargo-eosiocontract
 ```
 
-That's all. See the next chapter on how to write a simple Smart Contracts and Build it.
+## Install binaryen
+
+* Install `binaryen` in a version >= 99:
+  * [Debian/Ubuntu](https://tracker.debian.org/pkg/binaryen): `apt-get install binaryen`
+  * [Homebrew](https://formulae.brew.sh/formula/binaryen): `brew install binaryen`
+  * [Arch Linux](https://archlinux.org/packages/community/x86_64/binaryen/): `pacman -S binaryen`
+  * Windows: [binary releases are available](https://github.com/WebAssembly/binaryen/releases)

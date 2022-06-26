@@ -1,0 +1,19 @@
+[package]
+name = "mi_example"
+version = "0.1.0"
+authors = [""]
+edition = "2021"
+
+[dependencies]
+eosio-chain = { git = "https://github.com/uuosio/rscdk", default-features = false }
+
+[lib]
+name = "mi_example"
+path = "lib.rs"
+crate-type = ["cdylib"]
+
+[features]
+default = ["std"]
+std = [
+    "eosio-chain/std",
+]

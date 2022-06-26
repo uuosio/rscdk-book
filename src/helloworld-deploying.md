@@ -2,18 +2,32 @@
 
 ```bash
 source ~/env/bin/activate
+#install Python Toolkit for EOS 
 python3 -m pip install pyeoskit
 ```
 
-## Creating a test account
+## Create a test account
 ```
 https://monitor.jungletestnet.io/#account
 ```
 
-## Receiving some test token
+## Receive some test token
 ```
 https://monitor.jungletestnet.io/#faucet
 ```
+
+## Get Some Free CPU Resource
+```
+https://monitor.jungletestnet.io/#powerup
+```
+
+## Deploy the Contract and Call Action on Chain
+
+use following code to deploy the test contract and interact with the test contract with `sayhello` action.
+
+Change private key  and `test_account` as demand.
+
+[deploy.py](https://github.com/uuosio/rscdk-book/blob/main/demos/helloworld/deploy.py)
 
 ```python
 #{

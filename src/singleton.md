@@ -1,33 +1,28 @@
-# Source Code
-
-Use the following command to create an initial project.
-
-```bash
-cargo eosiocontract init helloworld
-```
-
-Replace `helloworld/lib.rs` with the following source code:
+# Singleton
 
 ```rust
 #![cfg_attr(not(feature = "std"), no_std)]
 
 #[eosio_chain::contract]
-mod hello {
+mod token {
     use eosio_chain::{
         Name,
         eosio_println,
     };
 
+    #[chain(table="counter", singleton)]
+    pub struct Counter {
+        count: u64
+    }
+
     #[chain(main)]
-    #[allow(dead_code)]
-    pub struct Hello {
+    pub struct Contract {
         receiver: Name,
         first_receiver: Name,
         action: Name,
     }
 
-    impl Hello {
-
+    impl Contract {
         pub fn new(receiver: Name, first_receiver: Name, action: Name) -> Self {
             Self {
                 receiver: receiver,
@@ -36,9 +31,13 @@ mod hello {
             }
         }
 
-        #[chain(action="sayhello")]
-        pub fn say_hello(&self, name: String) {
-            eosio_println!("++++hello", name);
+        #[chain(action = "inc")]
+        pub fn inc_count(&self) {
+            let db = Counter::new_mi(self.receiver, self.receiver);
+            let mut value = db.get().unwrap_or(Counter{count: 1});
+            eosio_println!("+++++count2:", value.count);
+            value.count += 1;
+            db.set(&value, self.receiver);
         }
     }
 }
