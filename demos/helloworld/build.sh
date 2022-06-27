@@ -1,1 +1,1 @@
-cargo eosiocontract build --release
+rust-contract build

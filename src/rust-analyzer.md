@@ -12,13 +12,14 @@ In order to view the code generate by `eosio_chain::contract` macro, use [`Rust 
 
 
 > Hint: if you have installed `rust-analyzer` with nightly toolchain as default, please disable and then enable it again, otherwise macro expandsion won't work.
+
 Run the following command to check the current rust toolchain
 
 ```
 rustup default
 ```
 
-This is what code after expanding look like:
+This is what the code after expanding looks like:
 
 ![image](./images/rust-analyzer.png)
 

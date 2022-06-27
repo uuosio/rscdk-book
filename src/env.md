@@ -37,7 +37,7 @@ rustup component add rust-src --toolchain nightly-x86_64-apple-darwin
 ## Install Rust Smart Contracts Builder 
 
 ```
-cargo install cargo-eosiocontract
+python3 -m pip install rust-contracts-builder
 ```
 
 ## Install binaryen
