@@ -10,7 +10,7 @@ mod test {
     pub struct MyData {
         #[chain(primary)]
         a1: u64,
-        #[chain(Idx64)]
+        #[chain(secondary)]
         a2: u64
     }
 

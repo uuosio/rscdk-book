@@ -10,7 +10,7 @@ eosio-chain = { git = "https://github.com/uuosio/rscdk", default-features = fals
 [lib]
 name = "mi_example"
 path = "lib.rs"
-crate-type = ["cdylib"]
+crate-type = ["cdylib", "rlib"]
 
 [features]
 default = ["std"]
