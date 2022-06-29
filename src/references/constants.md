@@ -13,7 +13,12 @@ pub const ACTIVE: Name = Name{n: static_str_to_name("active")};
 
 # OWNER
 ```rust
-pub const OWNER: Name = Name{n: static_str_to_name("active")};
+pub const OWNER: Name = Name{n: static_str_to_name("owner")};
+```
+
+# CODE
+```rust
+pub const CODE: Name = Name{n: static_str_to_name("eosio.code")};
 ```
 
 ## Source Code
