@@ -1,11 +1,5 @@
 # Deploying
 
-```bash
-source ~/env/bin/activate
-#install Python Toolkit for EOS 
-python3 -m pip install pyeoskit
-```
-
 ## Create a test account
 ```
 https://monitor.jungletestnet.io/#account

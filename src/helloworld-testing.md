@@ -1,16 +1,5 @@
 # Testing
 
-## Install testing tool.
-
-Run the following commands one by one to install `ipyeos` in a Python virtual environment.
-
-```bash
-python3 -m venv ~/env
-source ~/env/bin/activate
-python3 -m pip install --upgrade pip
-python3 -m pip install ipyeos
-```
-
 ## Testing code
 
 Save the following code as `test.py`

@@ -47,3 +47,27 @@ python3 -m pip install rust-contracts-builder
   * [Homebrew](https://formulae.brew.sh/formula/binaryen): `brew install binaryen`
   * [Arch Linux](https://archlinux.org/packages/community/x86_64/binaryen/): `pacman -S binaryen`
   * Windows: [binary releases are available](https://github.com/WebAssembly/binaryen/releases)
+
+## Install Eos Test Framework
+
+```
+python3 -m venv ~/env
+source ~/env/bin/activate
+python3 -m pip install --upgrade pip
+python3 -m pip install ipyeos
+```
+
+Next time if you want to run tests in examples, you need to active virtual env again.
+
+```
+source ~/env/bin/activate
+```
+
+## Install Python Toolkit for EOS 
+
+```bash
+source ~/env/bin/activate
+python3 -m pip install pyeoskit
+```
+
+pyeoskit is used to deploy a contract.
