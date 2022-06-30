@@ -154,7 +154,7 @@
 <pre><code>https://monitor.jungletestnet.io/#powerup
 </code></pre>
 <h2 id="deploy-the-contract-and-call-action-on-chain"><a class="header" href="#deploy-the-contract-and-call-action-on-chain">Deploy the Contract and Call Action on Chain</a></h2>
-<p>use following code to deploy the test contract and interact with the test contract with <code>sayhello</code> action.</p>
+<p>Use the following code to deploy the test contract and interact with the test contract with <code>sayhello</code> action.</p>
 <p>Change private key  and <code>test_account</code> as demand.</p>
 <p><a href="https://github.com/uuosio/rscdk-book/blob/main/demos/helloworld/deploy.py">deploy.py</a></p>
 <pre><code class="language-python">#{
@@ -205,9 +205,9 @@ if len(wasm) * 10 + 4000 &gt; ram_quota:
 
 code = eosapi.get_raw_code_and_abi(test_account)['wasm']
 if not base64.standard_b64decode(code) == wasm:
-    eosapi.deploy_contract('rusttesttest', wasm, abi)
+    eosapi.deploy_contract(test_account, wasm, abi)
 
-r = eosapi.push_action('rusttesttest', 'sayhello', {'name': 'rust'}, {test_account: 'active'})
+r = eosapi.push_action(test_account, 'sayhello', {'name': 'rust'}, {test_account: 'active'})
 print(r['processed']['elapsed'])
 print(r['processed']['action_traces'][0]['console'])
 </code></pre>
