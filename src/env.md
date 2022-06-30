@@ -22,16 +22,16 @@ Current installation options:
 3) Cancel installation
 ```
 
-Open a new terminal, run the following command to switch rust to nightly
+Activate the new PATH environment.
 
 ```bash
-rustup default nightly
+source $HOME/.cargo/env
 ```
 
-## Install rust-src
+## Install Nightly Rust
 
-```
-rustup component add rust-src --toolchain nightly-x86_64-apple-darwin
+```bash
+rustup toolchain install nightly --component rust-src
 ```
 
 ## Install Rust Smart Contracts Builder 
@@ -71,3 +71,39 @@ python3 -m pip install pyeoskit
 ```
 
 pyeoskit is used to deploy contracts.
+
+## Checking Environment
+
+Create a new rust contract project:
+
+```bash
+rust-contract init hello
+```
+
+Build
+
+```bash
+cd hello
+./build.sh
+```
+
+Test
+
+```bash
+./test.sh
+```
+
+If you see the following output, that means everything have been installed successfully.
+
+```
+test.py debug 2022-06-30T05:35:44.217 uuos      apply_context.cpp:36          print_debug          ] 
+[(hello,inc)->hello]: CONSOLE OUTPUT BEGIN =====================
+count is 1
+
+[(hello,inc)->hello]: CONSOLE OUTPUT END   =====================
+debug 2022-06-30T05:35:44.220 uuos      apply_context.cpp:36          print_debug          ] 
+[(hello,inc)->hello]: CONSOLE OUTPUT BEGIN =====================
+count is 2
+
+[(hello,inc)->hello]: CONSOLE OUTPUT END   =====================
+```

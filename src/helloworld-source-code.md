@@ -3,7 +3,7 @@
 Use the following command to create an initial project.
 
 ```bash
-cargo eosiocontract init helloworld
+rust-contract init helloworld
 ```
 
 Replace `helloworld/lib.rs` with the following source code:

@@ -42,3 +42,8 @@ mod token {
     }
 }
 ```
+
+## Example
+
+[counter2](https://github.com/uuosio/rscdk/tree/main/examples/counter2)
+

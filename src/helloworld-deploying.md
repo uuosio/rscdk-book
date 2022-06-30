@@ -17,7 +17,7 @@ https://monitor.jungletestnet.io/#powerup
 
 ## Deploy the Contract and Call Action on Chain
 
-use following code to deploy the test contract and interact with the test contract with `sayhello` action.
+Use the following code to deploy the test contract and interact with the test contract with `sayhello` action.
 
 Change private key  and `test_account` as demand.
 
@@ -72,9 +72,9 @@ if len(wasm) * 10 + 4000 > ram_quota:
 
 code = eosapi.get_raw_code_and_abi(test_account)['wasm']
 if not base64.standard_b64decode(code) == wasm:
-    eosapi.deploy_contract('rusttesttest', wasm, abi)
+    eosapi.deploy_contract(test_account, wasm, abi)
 
-r = eosapi.push_action('rusttesttest', 'sayhello', {'name': 'rust'}, {test_account: 'active'})
+r = eosapi.push_action(test_account, 'sayhello', {'name': 'rust'}, {test_account: 'active'})
 print(r['processed']['elapsed'])
 print(r['processed']['action_traces'][0]['console'])
 ```

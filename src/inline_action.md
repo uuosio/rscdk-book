@@ -1,6 +1,6 @@
 # Inline Action
 
-An inline action initiates by contract code. Since EOS contract does not support synchronized call to other contracts currently, inline action is the only way contracts can interact with each other.
+An inline action initiates by contract code. Since EOS contracts does not support synchronized call to other contracts currently, inline action is the only way contracts can interact with each other.
 
 ## Code Example
 
@@ -58,20 +58,19 @@ mod inline_action_example {
 }
 ```
 
-## Test Code
+## Testing Code
 
 ```python
-    deploy_contract('inlineaction')
-
-    args = {'name': 'bob'}
-    r = chain.push_action('hello', 'sayhello', args)
-    logger.info('+++++++create elapsed: %s', r['elapsed'])
-    chain.produce_block()
+deploy_contract('inlineaction')
+args = {'name': 'bob'}
+r = chain.push_action('hello', 'sayhello', args)
+logger.info('+++++++create elapsed: %s', r['elapsed'])
+chain.produce_block()
 ```
 
-which you can find in [examples/test.py](https://github.com/uuosio/rscdk/blob/9537fb1b9af8d3436578b937c8ab8e8255a5b9a9/examples/test.py#L202)
-In this example, test code initiates `sayhello` action with name `bod`, which prints `hello bob` to the console.
-Meanwhile, `sayhello` action sends `saygoodbye` action to the same contract which prints `goodbye bob` to the console.
+The test code can be found in [examples/test.py](https://github.com/uuosio/rscdk/blob/9537fb1b9af8d3436578b937c8ab8e8255a5b9a9/examples/test.py#L202).
+In this example, test code initiates a `sayhello` action with name `bob`, which prints `hello bob` to the console,
+meanwhile, `sayhello` action sends `saygoodbye` action to the same contract which prints `goodbye bob` to the console.
 
 The account needs to have an `eosio.code` permission to send an inline action. Below is the script that adds `eosio.code` permission to a contract account.
 
@@ -96,7 +95,7 @@ def update_auth(chain, account):
     chain.push_action('eosio', 'updateauth', a, {account:'active'})
 ```
 
-## References
+## See Also
 - [Action](./references/action.md)
 - [Inline Action Example](https://github.com/uuosio/rscdk/tree/main/examples/inlineaction)
 
