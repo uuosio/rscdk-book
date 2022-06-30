@@ -144,7 +144,7 @@
                 <div id="content" class="content">
                     <main>
                         <h1 id="inline-action"><a class="header" href="#inline-action">Inline Action</a></h1>
-<p>An inline action initiates by contract code. Since EOS contract does not support synchronized call to other contracts currently, inline action is the only way contracts can interact with each other.</p>
+<p>An inline action initiates by contract code. Since EOS contracts does not support synchronized call to other contracts currently, inline action is the only way contracts can interact with each other.</p>
 <h2 id="code-example"><a class="header" href="#code-example">Code Example</a></h2>
 <pre><pre class="playground"><code class="language-rust">
 <span class="boring">#![allow(unused)]
@@ -203,16 +203,15 @@ mod inline_action_example {
 <span class="boring">}
 </span></code></pre></pre>
 <h2 id="test-code"><a class="header" href="#test-code">Test Code</a></h2>
-<pre><code class="language-python">    deploy_contract('inlineaction')
-
-    args = {'name': 'bob'}
-    r = chain.push_action('hello', 'sayhello', args)
-    logger.info('+++++++create elapsed: %s', r['elapsed'])
-    chain.produce_block()
+<pre><code class="language-python">deploy_contract('inlineaction')
+args = {'name': 'bob'}
+r = chain.push_action('hello', 'sayhello', args)
+logger.info('+++++++create elapsed: %s', r['elapsed'])
+chain.produce_block()
 </code></pre>
-<p>which you can find in <a href="https://github.com/uuosio/rscdk/blob/9537fb1b9af8d3436578b937c8ab8e8255a5b9a9/examples/test.py#L202">examples/test.py</a>
-In this example, test code initiates <code>sayhello</code> action with name <code>bod</code>, which prints <code>hello bob</code> to the console.
-Meanwhile, <code>sayhello</code> action sends <code>saygoodbye</code> action to the same contract which prints <code>goodbye bob</code> to the console.</p>
+<p>The test code can be found in <a href="https://github.com/uuosio/rscdk/blob/9537fb1b9af8d3436578b937c8ab8e8255a5b9a9/examples/test.py#L202">examples/test.py</a>.
+In this example, test code initiates a <code>sayhello</code> action with name <code>bob</code>, which prints <code>hello bob</code> to the console,
+meanwhile, <code>sayhello</code> action sends <code>saygoodbye</code> action to the same contract which prints <code>goodbye bob</code> to the console.</p>
 <p>The account needs to have an <code>eosio.code</code> permission to send an inline action. Below is the script that adds <code>eosio.code</code> permission to a contract account.</p>
 <pre><code class="language-python">def update_auth(chain, account):
     a = {
