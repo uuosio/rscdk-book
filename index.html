@@ -160,22 +160,11 @@
 2) Customize installation
 3) Cancel installation
 </code></pre>
-<p>Open a new terminal or run the following command to activate the new PATH environment.</p>
-<p>Linux</p>
-<pre><code class="language-bash">source ~/.bashrc
+<p>Activate the new PATH environment.</p>
+<pre><code class="language-bash">source $HOME/.cargo/env
 </code></pre>
-<p>macOS</p>
-<pre><code class="language-bash">source ~/.bash_profile
-</code></pre>
-<h2 id="install-nightly-rust"><a class="header" href="#install-nightly-rust">Install nightly rust</a></h2>
-<pre><code class="language-bash">rustup install nightly
-</code></pre>
-<h2 id="install-nightly-rust-src"><a class="header" href="#install-nightly-rust-src">Install nightly rust-src</a></h2>
-<p>Linux</p>
-<pre><code class="language-bash">rustup component add rust-src --toolchain nightly-x86_64-unknown-linux-gnu
-</code></pre>
-<p>macOS</p>
-<pre><code class="language-bash">rustup component add rust-src --toolchain nightly-x86_64-apple-darwin
+<h2 id="install-nightly-rust"><a class="header" href="#install-nightly-rust">Install Nightly Rust</a></h2>
+<pre><code class="language-bash">rustup toolchain install nightly --component rust-src
 </code></pre>
 <h2 id="install-rust-smart-contracts-builder"><a class="header" href="#install-rust-smart-contracts-builder">Install Rust Smart Contracts Builder</a></h2>
 <pre><code>python3 -m pip install rust-contracts-builder

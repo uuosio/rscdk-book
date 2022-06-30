@@ -161,22 +161,11 @@
 2) Customize installation
 3) Cancel installation
 </code></pre>
-<p>Open a new terminal or run the following command to activate the new PATH environment.</p>
-<p>Linux</p>
-<pre><code class="language-bash">source ~/.bashrc
+<p>Activate the new PATH environment.</p>
+<pre><code class="language-bash">source $HOME/.cargo/env
 </code></pre>
-<p>macOS</p>
-<pre><code class="language-bash">source ~/.bash_profile
-</code></pre>
-<h2 id="install-nightly-rust"><a class="header" href="#install-nightly-rust">Install nightly rust</a></h2>
-<pre><code class="language-bash">rustup install nightly
-</code></pre>
-<h2 id="install-nightly-rust-src"><a class="header" href="#install-nightly-rust-src">Install nightly rust-src</a></h2>
-<p>Linux</p>
-<pre><code class="language-bash">rustup component add rust-src --toolchain nightly-x86_64-unknown-linux-gnu
-</code></pre>
-<p>macOS</p>
-<pre><code class="language-bash">rustup component add rust-src --toolchain nightly-x86_64-apple-darwin
+<h2 id="install-nightly-rust"><a class="header" href="#install-nightly-rust">Install Nightly Rust</a></h2>
+<pre><code class="language-bash">rustup toolchain install nightly --component rust-src
 </code></pre>
 <h2 id="install-rust-smart-contracts-builder"><a class="header" href="#install-rust-smart-contracts-builder">Install Rust Smart Contracts Builder</a></h2>
 <pre><code>python3 -m pip install rust-contracts-builder
@@ -547,7 +536,7 @@ meanwhile, <code>sayhello</code> action sends <code>saygoodbye</code> action to 
     }
     chain.push_action('eosio', 'updateauth', a, {account:'active'})
 </code></pre>
-<h2 id="references"><a class="header" href="#references">References</a></h2>
+<h2 id="see-also"><a class="header" href="#see-also">See Also</a></h2>
 <ul>
 <li><a href="./references/action.html">Action</a></li>
 <li><a href="https://github.com/uuosio/rscdk/tree/main/examples/inlineaction">Inline Action Example</a></li>
@@ -1080,6 +1069,8 @@ mod token {
 }
 <span class="boring">}
 </span></code></pre></pre>
+<h2 id="example"><a class="header" href="#example">Example</a></h2>
+<p><a href="https://github.com/uuosio/rscdk/tree/main/examples/counter2">counter2</a></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="struct-reference"><a class="header" href="#struct-reference">Struct Reference</a></h1>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="constants"><a class="header" href="#constants">Constants</a></h1>
 <h1 id="same_payer"><a class="header" href="#same_payer">SAME_PAYER</a></h1>
