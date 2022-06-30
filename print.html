@@ -161,11 +161,22 @@
 2) Customize installation
 3) Cancel installation
 </code></pre>
-<p>Open a new terminal, run the following command to switch rust to nightly</p>
-<pre><code class="language-bash">rustup default nightly
+<p>Open a new terminal or run the following command to activate the new PATH environment.</p>
+<p>Linux</p>
+<pre><code class="language-bash">source ~/.bashrc
 </code></pre>
-<h2 id="install-rust-src"><a class="header" href="#install-rust-src">Install rust-src</a></h2>
-<pre><code>rustup component add rust-src --toolchain nightly-x86_64-apple-darwin
+<p>macOS</p>
+<pre><code class="language-bash">source ~/.bash_profile
+</code></pre>
+<h2 id="install-nightly-rust"><a class="header" href="#install-nightly-rust">Install nightly rust</a></h2>
+<pre><code class="language-bash">rustup install nightly
+</code></pre>
+<h2 id="install-nightly-rust-src"><a class="header" href="#install-nightly-rust-src">Install nightly rust-src</a></h2>
+<p>Linux</p>
+<pre><code class="language-bash">rustup component add rust-src --toolchain nightly-x86_64-unknown-linux-gnu
+</code></pre>
+<p>macOS</p>
+<pre><code class="language-bash">rustup component add rust-src --toolchain nightly-x86_64-apple-darwin
 </code></pre>
 <h2 id="install-rust-smart-contracts-builder"><a class="header" href="#install-rust-smart-contracts-builder">Install Rust Smart Contracts Builder</a></h2>
 <pre><code>python3 -m pip install rust-contracts-builder
@@ -195,6 +206,29 @@ python3 -m pip install ipyeos
 python3 -m pip install pyeoskit
 </code></pre>
 <p>pyeoskit is used to deploy contracts.</p>
+<h2 id="checking-environment"><a class="header" href="#checking-environment">Checking Environment</a></h2>
+<p>Create a new rust contract project:</p>
+<pre><code class="language-bash">rust-contract init hello
+</code></pre>
+<p>Build</p>
+<pre><code class="language-bash">cd hello
+./build.sh
+</code></pre>
+<p>Test</p>
+<pre><code class="language-bash">./test.sh
+</code></pre>
+<p>If you see the following output, that means everything have been installed successfully.</p>
+<pre><code>test.py debug 2022-06-30T05:35:44.217 uuos      apply_context.cpp:36          print_debug          ] 
+[(hello,inc)-&gt;hello]: CONSOLE OUTPUT BEGIN =====================
+count is 1
+
+[(hello,inc)-&gt;hello]: CONSOLE OUTPUT END   =====================
+debug 2022-06-30T05:35:44.220 uuos      apply_context.cpp:36          print_debug          ] 
+[(hello,inc)-&gt;hello]: CONSOLE OUTPUT BEGIN =====================
+count is 2
+
+[(hello,inc)-&gt;hello]: CONSOLE OUTPUT END   =====================
+</code></pre>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="hello-world"><a class="header" href="#hello-world">Hello World</a></h1>
 <p>This chapter will guide you to write an EOS Smart Contract.
 In this chapter you will learn to:</p>
