@@ -23,6 +23,7 @@
   - [Iterator](./references/iterator.md)
   - [MultiIndex](./references/multi_index.md)
   - [DBI64](./references/dbi64.md)
+  - [Action](./references/action.md)
   - [ABI Types to Rust Types Map](./abi-to-rust.md)
 - [TODO](./todo.md)
 

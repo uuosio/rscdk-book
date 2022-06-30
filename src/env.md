@@ -70,4 +70,4 @@ source ~/env/bin/activate
 python3 -m pip install pyeoskit
 ```
 
-pyeoskit is used to deploy a contract.
+pyeoskit is used to deploy contracts.
