@@ -69,8 +69,8 @@ chain.produce_block()
 ```
 
 The test code can be found in [examples/test.py](https://github.com/uuosio/rscdk/blob/9537fb1b9af8d3436578b937c8ab8e8255a5b9a9/examples/test.py#L202).
-In this example, test code initiates a `sayhello` action with name `bob`, which prints `hello bob` to the console,
-meanwhile, `sayhello` action sends `saygoodbye` action to the same contract which prints `goodbye bob` to the console.
+In this example, the test code initiates a `sayhello` action with the name `bob`, which prints `hello bob` to the console,
+meanwhile, the `sayhello` action sends a `saygoodbye` action to the same contract which prints `goodbye bob` to the console.
 
 The account needs to have an `eosio.code` permission to send an inline action. Below is the script that adds `eosio.code` permission to a contract account.
 

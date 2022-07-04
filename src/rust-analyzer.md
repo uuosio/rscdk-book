@@ -2,7 +2,7 @@
 
 rust-analyzer is a Visual Studio Code extension, it provides support for the Rust programming language
 
-In order to let `rust-analyzer` support for EOS smart contracts development well, switch rust default toolchain to `stable`.
+In order to let `rust-analyzer` support for EOS smart contracts develop well, switch rust default toolchain to `stable`.
 
 ```bash
 rustup default stable

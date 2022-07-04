@@ -7,7 +7,7 @@
   - [Testing](./helloworld-testing.md)
   - [Deploying](./helloworld-deploying.md)
   - [Full Example](./helloworld-full-example.md)
-- [rust-analyzer](./rust-analyzer.md)
+- [Rust Analyzer](./rust-analyzer.md)
 - [Inline Action](./inline_action.md)
 - [DBI64](./dbi64.md)
 - [MultiIndex](./database.md)

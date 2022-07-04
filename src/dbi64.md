@@ -15,7 +15,7 @@ where
 }
 ```
 
-`DBI64` represents an on-chain key-value database with `u64` as key and store variable length of data.
+`DBI64` represents an on-chain key-value database with `u64` as key and stores variable lengths of data.
 
 ## New
 
@@ -31,10 +31,24 @@ Creates a new DBI64 instance
 pub fn store(&self, key: u64,  value: &T, payer: Name) -> Iterator<T>
 ```
 
-Store a value indexes by `key`. `payer` specifies account to pay the RAM resources.
-VM throws an exception which can't catch by contract code if there is already a value with `key` exists in the database.
+Store a value indexed by the `key`. `payer` specifies account to pay the RAM resources.
+VM throws an exception that can't catch by contract code if there is already a value with the `key` that exists in the database.
 
 The following example code shows how to check if a value with the `key` already exists.
+
+```rust
+let it = db.find(key);
+if !it.is_ok() {
+    //create a new value
+    //let value = ...
+    db.store(key, &value, payer);
+} else {
+    let mut value = it.get_value();
+    // modify value
+    // ...
+    db.update(it, &value, payer);
+}
+```
 
 ## Find
 
@@ -50,9 +64,9 @@ Find value by primary key
 pub fn update(&self, iterator: &Iterator<T>, value: &T, payer: u64)
 ```
 
-Update a value in database.
+Update a value in the database.
 `payer` specifies account to pay the RAM resources. 
-The related action in transaction must contain a corresponding permission of `payer`.
+The related action in the transaction must contain the corresponding permission of the `payer`.
 
 
 ```rust

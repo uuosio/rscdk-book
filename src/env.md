@@ -3,23 +3,7 @@
 ## Install Rust
 
 ```
-curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-```
-
-Press enter when you see the following output:
-
-```
-Current installation options:
-
-
-   default host triple: x86_64-apple-darwin
-     default toolchain: stable (default)
-               profile: default
-  modify PATH variable: yes
-
-1) Proceed with installation (default)
-2) Customize installation
-3) Cancel installation
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
 ```
 
 Activate the new PATH environment.
@@ -34,12 +18,6 @@ source $HOME/.cargo/env
 rustup toolchain install nightly --component rust-src
 ```
 
-## Install Rust Smart Contracts Builder 
-
-```
-python3 -m pip install rust-contracts-builder
-```
-
 ## Install binaryen
 
 * Install `binaryen` in a version >= 99:
@@ -48,25 +26,34 @@ python3 -m pip install rust-contracts-builder
   * [Arch Linux](https://archlinux.org/packages/community/x86_64/binaryen/): `pacman -S binaryen`
   * Windows: [binary releases are available](https://github.com/WebAssembly/binaryen/releases)
 
-## Install Eos Test Framework
-
-```
+## Create a Virtual Python Env for Testing
+```bash
 python3 -m venv ~/env
 source ~/env/bin/activate
 python3 -m pip install --upgrade pip
-python3 -m pip install ipyeos
 ```
 
-Next time if you want to run tests in examples, you need to active virtual env again.
+Next time you want to use the test environment, just run the following command again.
 
 ```
 source ~/env/bin/activate
+```
+
+## Install Eos Test Framework
+
+```
+python3 -m pip install ipyeos
+```
+
+## Install Rust Smart Contracts Builder 
+
+```
+python3 -m pip install rust-contracts-builder
 ```
 
 ## Install Python Toolkit for EOS 
 
 ```bash
-source ~/env/bin/activate
 python3 -m pip install pyeoskit
 ```
 
@@ -96,14 +83,17 @@ Test
 If you see the following output, that means everything have been installed successfully.
 
 ```
-test.py debug 2022-06-30T05:35:44.217 uuos      apply_context.cpp:36          print_debug          ] 
+test.py debug 2022-07-04T04:01:58.496 ipyeos    apply_context.cpp:36          print_debug          ] 
 [(hello,inc)->hello]: CONSOLE OUTPUT BEGIN =====================
 count is 1
 
 [(hello,inc)->hello]: CONSOLE OUTPUT END   =====================
-debug 2022-06-30T05:35:44.220 uuos      apply_context.cpp:36          print_debug          ] 
+debug 2022-07-04T04:01:58.498 ipyeos    apply_context.cpp:36          print_debug          ] 
 [(hello,inc)->hello]: CONSOLE OUTPUT BEGIN =====================
 count is 2
 
 [(hello,inc)->hello]: CONSOLE OUTPUT END   =====================
+.
+
+============================== 1 passed in 0.90s ===============================
 ```

@@ -1,8 +1,7 @@
 ## Generating an ABI File for a Smart Contract
 
 ABI(Application Binary Interface) provides a way to interact with contracts
-
-First create a directory named `abigen` subdirectory. Then save the following two files in it.
+First, create a directory named `abigen` subdirectory. Then save the following two files in it.
 
 ### Cargo.toml
 

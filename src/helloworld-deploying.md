@@ -18,8 +18,7 @@ https://monitor.jungletestnet.io/#powerup
 ## Deploy the Contract and Call Action on Chain
 
 Use the following code to deploy the test contract and interact with the test contract with `sayhello` action.
-
-Change private key  and `test_account` as demand.
+Change private key and `test_account` as demand.
 
 [deploy.py](https://github.com/uuosio/rscdk-book/blob/main/demos/helloworld/deploy.py)
 
@@ -43,21 +42,7 @@ with open('./target/helloworld.abi', 'r') as f:
     abi = f.read()
 
 info = eosapi.get_account(test_account)
-# print(json.dumps(info, indent=' '))
 ram_quota = info['ram_quota']
-
-# eosapi.transfer('rusttest1113', test_account, 100.0, payer=test_account)
-# import sys;sys.exit(0)
-
-if info['cpu_limit']['available'] < 1000:
-    args = {
-        'from': test_account,
-        'receiver': test_account,
-        'stake_net_quantity': '50.0000 EOS',
-        'stake_cpu_quantity': '10.0000 EOS',
-        'transfer': False,
-    }
-    eosapi.push_action('eosio', 'delegatebw', args, {test_account: 'active'})
 
 if len(wasm) * 10 + 4000 > ram_quota:
     ram_bytes = len(wasm) * 10 + 4000 - ram_quota
