@@ -77,6 +77,32 @@ cd hello
 Test
 
 ```bash
+cargo test
+```
+
+If `eosdebugger` is running, it will output information like the following:
+
+```bash
+debug 2023-02-20T07:03:09.852 ipyeos    controller.cpp:2406           clear_expired_input_ ] removed 0 expired transactions of the 41 input dedup list
+debug 2023-02-20T07:03:09.861 ipyeos    controller.cpp:2406           clear_expired_input_ ] removed 0 expired transactions of the 47 input dedup list
+debug 2023-02-20T07:03:09.887 ipyeos    controller.cpp:2406           clear_expired_input_ ] removed 0 expired transactions of the 49 input dedup list
+debug 2023-02-20T07:03:09.891 ipyeos    apply_context.cpp:28          print_debug          ]
+[(hello,inc)->hello]: CONSOLE OUTPUT BEGIN =====================
+count is 1
+
+[(hello,inc)->hello]: CONSOLE OUTPUT END   =====================
+debug 2023-02-20T07:03:09.894 ipyeos    controller.cpp:2406           clear_expired_input_ ] removed 0 expired transactions of the 50 input dedup list
+debug 2023-02-20T07:03:09.897 ipyeos    apply_context.cpp:28          print_debug          ]
+[(hello,inc)->hello]: CONSOLE OUTPUT BEGIN =====================
+count is 2
+
+[(hello,inc)->hello]: CONSOLE OUTPUT END   =====================
+debug 2023-02-20T07:03:09.899 ipyeos    controller.cpp:2406           clear_expired_input_ ] removed 0 expired transactions of the 51 input dedup list
+Listening for new connection...
+```
+
+In addition, you can use the `test.sh` script to run tests, eliminating the need for `eosdebugger` to be running.
+```bash
 ./test.sh
 ```
 
